@@ -7,7 +7,6 @@ double inputResistance(const char *message)
     int result;
     int symbol;
  
-    while (1)
     {
         printf("%s", message);
  
