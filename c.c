@@ -1,13 +1,27 @@
 #include <stdio.h>
 #include <math.h>
 
-/* Функция для вычисления значения a */
+/**
+*@brief вычисляет значения A по заданной формуле
+*@param x - значение параметра х
+*@param y - значение параметра y
+*@return рассчитанное значение
+*/
 double getA(const double x, const double y);
-/* Функция для вычисления значения b */
+
+/**
+*@brief вычисляет значения B
+*@param x - значение параметра х
+*@param y - значение параметра y
+*@return рассчитанное значение
+*/
 double getB(const double x, const double y);
 
-/* Главная функция программы */
-int main(void) {
+/**
+*@brief точка входа в программу
+*@return возвращает 0, если программа выполнена корректно
+*/
+int main() {
     const double X = 0.335;
     const double Y = 0.025;
 
@@ -21,13 +35,10 @@ int main(void) {
 
     return 0;
 }
-
-/* Функция для вычисления значения a по формуле */
 double getA(const double x, const double y) {
     return 1 + x + pow(x, 2) / 2 + pow(x, 3) / 3 + pow(x, 4) / 4;
 }
 
-/* Функция для вычисления значения b по формуле */
 double getB(const double x, const double y) {
     return x * (sin(pow(x, 3)) + pow(cos(y), 2));
 }
