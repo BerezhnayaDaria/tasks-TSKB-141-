@@ -38,12 +38,12 @@ int main()
 
 double getVolume(const double radius)
 {
-    return 4.0 / 3.0 * 3.141592653589793 * pow(radius, 3);
+    return 4.0 / 3.0 * M_PI * pow(radius, 3);
 }
 
 double getArea(const double radius)
 {
-    return 4.0 * 3.141592653589793 * pow(radius, 2);
+    return 4.0 * M_PI * pow(radius, 2);
 }
 
 double getDouble()
