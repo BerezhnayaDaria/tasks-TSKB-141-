@@ -2,8 +2,6 @@
 #include <math.h>
 #include <stdlib.h>
 
-#define PI 3.14159265358979323846
-
 enum Figure
 {
     TRAPEZOID = 1,
@@ -115,5 +113,5 @@ double sTrapezoid(const double side1, const double side2, const double height)
 
 double sCircle(const double radius)
 {
-    return PI * pow(radius, 2);
+    return M_PI * pow(radius, 2);
 }
