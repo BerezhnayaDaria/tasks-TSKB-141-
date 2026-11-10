@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES // for C
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
@@ -45,7 +46,7 @@ int main()
     enum Figure figure;
     int choice = 0;
 
-    printf("Выберите фигуру (1 - трапеция, 2 - круг):\n");
+    printf("Выберите фигуру (%d - трапеция, %d - круг):\n", TRAPEZOID, CIRCLE);
 
     if (scanf("%d", &choice) != 1)
     {
@@ -55,30 +56,33 @@ int main()
 
     figure = (enum Figure)choice;
 
-    if (figure == TRAPEZOID)
+    switch (figure)
     {
-        double side1 = getDouble();
-        double side2 = getDouble();
-        double height = getDouble();
+        case TRAPEZOID:
+        {
+            double side1 = getDouble();
+            double side2 = getDouble();
+            double height = getDouble();
 
-        checkSide(side1);
-        checkSide(side2);
-        checkSide(height);
+            checkSide(side1);
+            checkSide(side2);
+            checkSide(height);
 
-        printf("Площадь трапеции = %lf\n", sTrapezoid(side1, side2, height));
-    }
-    else if (figure == CIRCLE)
-    {
-        double radius = getDouble();
+            printf("Площадь трапеции = %lf\n", sTrapezoid(side1, side2, height));
+            break;
+        }
+        case CIRCLE:
+        {
+            double radius = getDouble();
 
-        checkSide(radius);
+            checkSide(radius);
 
-        printf("Площадь круга = %lf\n", sCircle(radius));
-    }
-    else
-    {
-        printf("Ошибка");
-        exit(EXIT_FAILURE);
+            printf("Площадь круга = %lf\n", sCircle(radius));
+            break;
+        }
+        default:
+            printf("Ошибка");
+            exit(EXIT_FAILURE);
     }
 
     return 0;
