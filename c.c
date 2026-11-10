@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES // for C
 #include <stdio.h>
 #include <math.h>
 
