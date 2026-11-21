@@ -12,29 +12,29 @@
 double getValue(const char* message);
 
 /**
- * @brief cчитывает с клавиатуры значение с плавающей точкой
+ * @brief проверяет, что шаг положительный
  * @param step  значение шага
  */
 void checkStep(const double step);
 
 /**
- * @brief cчитывает с клавиатуры значение с плавающей точкой
+ * @brief проверяет правильность заданного интервала
  * @param xbegin  начало интервала
  * @param xend  конец интервала
  */
 void checkSegment(const double xbegin, const double xend);
 
 /**
- * @brief cчитывает с клавиатуры значение с плавающей точкой
+ * @brief проверяет, принадлежит ли точка области определения функции
  * @param x  значение параметра х
  * @return true, если точка принадлежит области определения, иначе false
  */
 bool isOOF(const double x);
 
 /**
- * @brief Вычисляет значение заданной функции
- * @param x - значение параметра х
- * @return Рассчитанное значение функции
+ * @brief вычисляет значение заданной функции
+ * @param x  значение параметра х
+ * @return рассчитанное значение функции
  */
 double getY(const double x);
 
