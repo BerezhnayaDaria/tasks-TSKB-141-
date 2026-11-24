@@ -49,9 +49,7 @@ double GetDouble(){
 double ProcessNumber(const double value){
     if (value >= 0.0) {
         return pow(value, 2);
-    }
-    if (value < 0.0) {
+    } else {
         return pow(value, 4);
     }
-    return value;
 }
