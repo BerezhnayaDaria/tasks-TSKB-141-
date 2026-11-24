@@ -11,6 +11,21 @@
 double getY(const double x);
 
 /**
+ * @brief Безопасный ввод вещественного числа с клавиатуры
+ * @return Введенное значение
+ */
+double getDouble()
+{
+    double value = 0.0;
+    if (scanf("%lf", &value) != 1)
+    {
+        printf("Error input\n");
+        exit(1);
+    }
+    return value;
+}
+
+/**
  * @brief вычисляет сумму функционального ряда с заданной точностью
  * @param x   значение параметра x
  * @param e   заданная точность вычислений
@@ -32,11 +47,20 @@ double getCoef(const double x, const int i);
  */
 int main()
 {
-    const double xbegin = 1.0;
-    const double xend = 2.0;
-    const double step = 0.1;
-    const double e = 1.5e-4;
+    double xbegin, xend, step, e;
 
+    printf("Enter xbegin: ");
+    xbegin = getDouble();
+    
+    printf("Enter xend: ");
+    xend = getDouble();
+    
+    printf("Enter step: ");
+    step = getDouble();
+    
+    printf("Enter epsilon (e): ");
+    e = getDouble();
+    
     printf("x\t\t y\t\t S\n");
     printf("------------------------------------------\n");
 
@@ -58,7 +82,7 @@ double getSum(const double x, const double e)
     double a = 1.0;
     double result = a;
 
-    for (int i = 1; fabs(a) >= e - DBL_EPSILON; i++)
+    for (int i = 1; fabs(getY(x)-result )<=e; i++)
     {
         result += a;
         a *= getCoef(x, i);
